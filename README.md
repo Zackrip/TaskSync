@@ -4,13 +4,14 @@ A full-stack task and team-collaboration platform built on the **MERN stack**, p
 
 ## Table of Contents
 
-- Overview
-- Features
-- Tech Stack
-- Getting Started
-- Environment Variables
-- Roadmap
-- License
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [Roadmap](#roadmap)
+- [License](#license)
 
 ## Overview
 
@@ -44,6 +45,37 @@ The application is organized around three core modules:
 - View available users, create or retrieve conversations, send messages, and fetch message history.
 - Backend built with dedicated models for **users**, **conversations**, and **messages**, with delivery over Socket.io.
 
+## Screenshots
+
+### Authentication & User Management
+| Registration | Login |
+|---|---|
+| ![Registration Page](screenshots/image1.png) | ![Login Page](screenshots/image2.png) |
+
+| Forgot Password | Reset Password |
+|---|---|
+| ![Forgot Password](screenshots/image3.png) | ![Reset Password](screenshots/image4.png) |
+
+### Task Management
+| Assigned To Me | Assigned To Others |
+|---|---|
+| ![Assigned To Me](screenshots/image5.png) | ![Assigned To Others](screenshots/image6.png) |
+
+| Create Task | Update Task |
+|---|---|
+| ![Create Task](screenshots/image7.png) | ![Update Task](screenshots/image8.png) |
+
+### Real-Time Notifications
+![Notifications Panel](screenshots/image9.png)
+
+### Real-Time Chat
+![Chat Module](screenshots/image10.png)
+
+### User Profile
+![User Profile](screenshots/image11.png)
+
+> Place the `screenshots/` folder at the root of your repository so the images above render correctly on GitHub.
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -70,13 +102,12 @@ git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
 
 # Install backend dependencies
-cd backend
+cd server
 npm install
 
 # Install frontend dependencies
-cd frontend
+cd ../client
 npm install
-
 ```
 
 ### Environment Variables
@@ -84,24 +115,25 @@ npm install
 Create a `.env` file in the `server` directory:
 
 ```env
-PORT=PORT
-MONGO_URI=MONGODB_URI
-JWT_SECRET=JWT_SECRET
-EMAIL_PASS=EMAIL_PASS
-EMAIL=EMAIL_ID
-REDIS_URL=REDIS_CLOUD_URL
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+ACCESS_TOKEN_SECRET=your_access_token_secret
+REFRESH_TOKEN_SECRET=your_refresh_token_secret
+SMTP_HOST=your_smtp_host
+SMTP_USER=your_email
+SMTP_PASS=your_email_password
 ```
 
 ### Running the App
 
 ```bash
 # Start the backend
-cd backend
+cd server
 npm run dev
 
 # Start the frontend
-cd frontend
-npm run dev
+cd ../client
+npm start
 ```
 
 ## Roadmap
@@ -113,4 +145,4 @@ npm run dev
 
 ## License
 
-This project is licensed under the MIT LICENSE.
+This project is licensed under the [MIT License](LICENSE).
